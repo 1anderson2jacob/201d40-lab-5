@@ -29,7 +29,9 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 function multiply(a, b) { //eslint-disable-line
-  // TODO: Write your code here
+  var output = a * b;
+  var message = 'The product of ' + a + ' and ' + b + ' is ' + output + '.';
+  return[output,message];
 }
 
 // Here is the test for multiply(); uncomment it to run it
