@@ -15,29 +15,11 @@ function sum(a, b) { //eslint-disable-line
   return [output, message]
 }
 
-// Here is the test for sum(); uncomment it to run it
-testSum(4, 7);
-
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
-
-/////////////////////////////////////
-/* Problem 2
-Write a function called multiply() that takes in two numbers as arguments and returns an array where the first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
-
-"The product of 5 and 9 is 45."
-
-Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
-
 function multiply(a, b) { //eslint-disable-line
   var output = a * b;
   var message = 'The product of ' + a + ' and ' + b + ' is ' + output + '.';
-  return[output,message];
+  return [output, message];
 }
-
-// Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
-
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
 /* Problem 3
@@ -53,7 +35,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 function sumAndMultiply(a, b, c) { //eslint-disable-line
 // TODO: Write your code here
+var sumOne = sum(a,b)[0];
+var sumTwo = sum(sumOne,c)[0];
+var productOne = multiply(a,b)[0];
+var productTwo = multiply(productOne,c)[0];
+var sumMessage = `${a} and ${b} and ${c} sum to ${sumTwo}.`;
+var productMessage = `The product of ${a} and ${b} and ${c} is ${productTwo}.`;
+return [sumTwo, productTwo, sumMessage, productMessage];
 }
+
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
 // testSumAndMultiply(4,7,5);
