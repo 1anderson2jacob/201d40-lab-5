@@ -67,22 +67,18 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(testArray) { //eslint-disable-line
   // TODO: Write your code here
   var message = "";
-  var lastSum = 0;
-  var nextSum = 0;
   var totalSum = 0;
-  for (var i = 0; i < testArray.length; i++)
-  {
+
+  for (var i = 0; i < testArray.length; i++) {
     totalSum = sum(totalSum, testArray[i])[0];
     message = sum(message, `${testArray[i]}`)[0];
-    if (i < (testArray.length-1))
-    {
+
+    if (i < (testArray.length-1)) {
       message = sum(message, ',')[0];
     }
-    else {
-      message = sum(message, ' ')[0];
-    }
   }
-  message = sum(message, `was passed in as an array of numbers, and ${totalSum} is their sum.`)[0];
+  message = sum(message, ` was passed in as an array of numbers, and ${totalSum} is their sum.`)[0];
+
   return [totalSum, message];
   //return [sumTotal];
 }
@@ -102,14 +98,29 @@ Write a function called multiplyArray() that takes an array of numbers as its ar
 IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle an array containing three elements.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
-
+var multArr = [2, 3, 4];
 
 function multiplyArray(multArr) { //eslint-disable-line
   // TODO: Write your code here
+  var message = 'The numbers ';
+  var totalProduct = 1;
+
+  for (var i = 0; i < multArr.length; i++) {
+    totalProduct = multiply(totalProduct, multArr[i])[0];
+    message = sum(message, `${multArr[i]}`)[0];
+    console.log(`totalProduct = ${totalProduct} at index ${multArr[i]}`)
+
+    if (i < (multArr.length-1)) {
+      message = sum(message, ',')[0];
+    }
+  }
+  message = sum(message, ` have a product of ${totalProduct}.`)[0];
+
+  return [totalProduct, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
